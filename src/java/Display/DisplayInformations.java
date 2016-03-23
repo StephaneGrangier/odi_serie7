@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -55,6 +56,15 @@ public class DisplayInformations extends HttpServlet {
             String paramTest = config.getInitParameter("paramTest");
                     
             out.println("<h3>Param du servelet: " + paramTest + "</h3>");
+            
+            
+            
+            out.println("<h3>Informations de la session</h3>");
+            
+            HttpSession session = request.getSession(true);
+            out.println("<h2>Nom: " + session.getAttribute("nom") + "</h2>");
+            out.println("<h2>Prenom: " + session.getAttribute("prenom") + "</h2>");
+   
     
             
             out.println("</body>");

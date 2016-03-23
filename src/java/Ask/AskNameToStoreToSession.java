@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author stephane.grangier
  */
-public class AskNameToDisplay extends HttpServlet {
+public class AskNameToStoreToSession extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,24 +35,28 @@ public class AskNameToDisplay extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AskNameToDisplay</title>");            
+            out.println("<title>Servlet AskNameToDisplay</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet: " + request.getContextPath() + "</h1>");
-            
+
             out.println("<form id=\"ask\" name=\"ask\" method=\"get\" action=\"DisplayInformations\"");
             out.println(" <label>Prenom");
             out.println("<input type=\"text\" name=\"prenom\" id=\"prenom\" tabindex=\"1\" />");
             out.println(" <label>Nom");
             out.println("<input type=\"text\" name=\"nom\" id=\"nom\" tabindex=\"2\" />");
- 
+
             out.println("<input type=\"submit\" name=\"send\" id=\"send\" value=\"Envoyer\" tabindex=\"2\" />");
             out.println("</form>");
-            
+
             out.println("</body>");
             out.println("</html>");
-            
         }
+
+        /*
+         HttpSession session = request.getSession(true);
+         session.setAttribute("id", id);
+         */
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
