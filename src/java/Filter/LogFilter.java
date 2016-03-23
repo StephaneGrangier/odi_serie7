@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.Date;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -65,6 +66,10 @@ public class LogFilter implements Filter {
         if (debug) {
             log("LogFilter:DoAfterProcessing");
         }
+        
+        Date currentDate = new Date();
+            
+        System.out.println("Log de l'accès au servlet - Date: " + currentDate);
 
 	// Write code here to process the request and/or response after
         // the rest of the filter chain is invoked.
